@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  vsftpd:
+    #image: fauria/vsftpd
+    image: panubo/vsftpd:latest
+    environment:
+      - FTP_USER=prueba
+      - FTP_PASS=azucar
+    volumes:
+    #- /var/app/ftp:/home/vsftpd
+    - /home/vagrant/dockerComposeTest/activity2ftp:/srv
+    ports:
+      - "21:21"
